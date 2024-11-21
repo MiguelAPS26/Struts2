@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+
+    <package name="basicstruts2" namespace="/" extends="struts-default">
+        <!-- Acción para la página de inicio -->
+        <action name="index" class="com.mycompany.struts1.action.HelloWorldAction" method="execute">
+            <result>/index.jsp</result>
+        </action>
+        
+        <action name="register" class="org.apache.struts.register.action.Register" method="execute">
+             <result name="success">/gracias.jsp</result>
+        </action>
+
+        <!-- Acción para procesar el formulario de registro -->
+        <action name="register" class="org.apache.struts.register.action.Register" method="execute">
+            <result name="success">/thankyou.jsp</result> <!-- Redirigir a thankyou.jsp -->
+        </action>
+
+        <!-- Acción para mostrar el saludo -->
+        <action name="hello" class="com.mycompany.struts1.action.HelloWorldAction" method="execute">
+            <result name="success">/hello.jsp</result>
+            <result name="input">/hello.jsp</result> <!-- Resultado para "input" -->
+        </action>
+
+    </package>
+
+</struts>
